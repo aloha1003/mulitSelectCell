@@ -1,0 +1,2 @@
+# mulitSelectCell
+Multi Select object
