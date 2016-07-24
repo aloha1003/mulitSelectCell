@@ -1,8 +1,17 @@
 (function ( $ ) {
-      $.fn.multiSelectCell = function(){
+    "use strict";
+      $.fn.multiSelectCell = function(opt){
       var target = $(this);
       var isCtrlPressed = false;
       var isCtrlSelecte = true;
+      var current = $(this).selector;
+      
+      var defaultOption = {
+            selected:selected,
+            getCount:getCount
+        };
+
+        var option = $.extend(defaultOption,opt);
         $(target)
                 .mousedown(rangeMouseDown)
                 .mouseup(rangeMouseUp)
@@ -16,6 +25,10 @@
         var dragEnd = 0;
         var isDragging = false;
 
+        function selected()
+        {
+            //To customize
+        }
         function outRange(e)
         {
             console.log('outRange');
@@ -53,6 +66,7 @@
                  return false; 
              };
             }
+            
         }
 
         function rangeMouseUp(e) {
@@ -88,6 +102,7 @@
             } else {
                 target.slice(dragStart, dragEnd + 1).addClass('selected');
             }
+            option.selected();
         }
 
         function isRightClick(e) {
@@ -98,6 +113,15 @@
             }
             return false;
         }
+        
+        function getCount()
+        {
+            
+            var selected  = current+'.selected';
+            return $(selected).length;
+        }
+        return option;
+
   };
 }(jQuery));
 

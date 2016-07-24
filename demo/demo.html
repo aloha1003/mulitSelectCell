@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+<script src="../jQuery-2.1.4.min.js"></script>
 <script src="../mulitSelectCell.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-  $('#multi_select td').multiSelectCell();
+      var multi = $('#multi_select td').multiSelectCell({selected:function(){
+          $('#selected_count').html('There are '+multi.getCount()+' item selected');
+      }});
 });
 </script>
 <style type="text/css">
@@ -33,6 +35,8 @@
       <td>4</td>
     </tr>
   </table>
-
+  <div id="selected_count">
+  
+  </div>
 </body>
 </html>
