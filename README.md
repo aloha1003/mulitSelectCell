@@ -1,4 +1,4 @@
-# mulitSelectCell
+# jQuery Plugin mulitSelectCell
 You can select multiple object by draggable with  ctrl or command key (Mac)
 
 # Demo
