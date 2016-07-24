@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+<script src="../mulitSelectCell.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+  $('#multi_select td').multiSelectCell();
+});
+</script>
+<style type="text/css">
+    td {
+  width:100px;
+    color:red
+}
+.selected{
+  color:green
+}
+</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Demo </title>
+</head>
+  
+<body>
+  <table border="1" id="multi_select">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+        <tr>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+  </table>
+
+</body>
+</html>
